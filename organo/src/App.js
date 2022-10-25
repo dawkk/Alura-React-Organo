@@ -1,13 +1,21 @@
-
+import { useState } from 'react';
 import Banner from './components/Banner';
 import Form from './components/Form';
-import TextField from './components/TextField';
+
 
 function App() {
+
+  const[users, setUsers] = useState([])
+
+  const newUserRegistered = (user) => {
+    console.log(user)
+    setUsers([...users, user])
+  }
+
   return (
     <div className="App">
         <Banner/>
-        <Form/>
+        <Form userRegistered={user => newUserRegistered(user)}/>
     </div>
   );
 }
