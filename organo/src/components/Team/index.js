@@ -6,11 +6,13 @@ const Team = (props) => {
   const borderColor = {borderColor:props.primaryColor};
 
   return (
-    <section className='team' style={css}>
+    props.collaborators.length > 0 ? <section className='team' style={css}>
       <h3 style={borderColor}>{props.name}</h3>
-      <Collaborator/>
-      <Collaborator/>
+       <div className='collaborators'>
+          {props.collaborators.map( collaborator => <Collaborator name={collaborator.name} job={collaborator.job} image={collaborator.image} />)}
+       </div>
     </section>
+    : ''
   )
 }
 

@@ -13,13 +13,17 @@ const Form = (props) => {
 
   const saving = (event) => {
     event.preventDefault()
-    props.userRegistered({
+    props.collaboratorAdded({
       name,
       job,
       image,
       team
     })
-
+    setName('')
+    setJob('')
+    setImage('')
+    setTeam('')
+    
     console.log('Form submitted => ', name, job, image, team)
   }
 
