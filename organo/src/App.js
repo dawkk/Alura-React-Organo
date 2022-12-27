@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Banner from './components/Banner';
+import Footer from './components/Footer';
 import Form from './components/Form';
 import Team from './components/Team';
 
@@ -47,7 +48,6 @@ function App() {
   const[collaborators, setCollaborators] = useState([])
 
   const newCollaboratorAdd = (collaborator) => {
-    console.log(collaborator)
     setCollaborators([...collaborators, collaborator])
   }
 
@@ -63,6 +63,7 @@ function App() {
           secondaryColor={team.secondaryColor}
           collaborators={collaborators.filter(collaborator => collaborator.team === team.name)}
         />)}
+        <Footer/>
     </div>
   );
 }
